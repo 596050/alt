@@ -1,0 +1,50 @@
+{
+	"name": "@strand/consulting",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"build:analyze": "ANALYZE=true next build",
+		"clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo && rm -rf .next",
+		"dev": "next dev -p 3333",
+		"dev:test": "next dev",
+		"lint": "next lint --fix",
+		"lint:fix": "eslint --fix --color --ext .js,.jsx,.ts,.tsx src",
+		"start": "next start",
+		"upgrade": "ncu --upgrade"
+	},
+	"dependencies": {
+		"@ducanh2912/next-pwa": "*",
+		"@formatjs/intl-localematcher": "^0.2.32",
+		"@next/font": "^13.2.1",
+		"@packages/components": "*",
+		"@packages/utils": "*",
+		"accept-language-parser": "^1.5.0",
+		"clsx": "^1.2.1",
+		"lerna": "^6.5.1",
+		"negotiator": "^0.6.3",
+		"next": "13.1.6",
+		"react": "18.*",
+		"react-dom": "18.*",
+		"server-only": "^0.0.1"
+	},
+	"devDependencies": {
+		"@next/bundle-analyzer": "^13.1.6",
+		"@ouorz/eslint-config-next": "*",
+		"@ouorz/prettier-config": "*",
+		"@tailwindcss/line-clamp": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.9",
+		"@types/accept-language-parser": "^1.5.3",
+		"@types/negotiator": "^0.6.1",
+		"@types/node": "18.13.0",
+		"@types/react": "18.0.28",
+		"@types/react-dom": "18.0.10",
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.14",
+		"eslint": "8.34.0",
+		"eslint-config-next": "13.1.6",
+		"postcss": "^8.4.21",
+		"tailwindcss": "^3.2.6",
+		"typescript": "4.*"
+	}
+}

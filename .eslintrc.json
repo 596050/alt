@@ -1,0 +1,87 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"@ouorz/eslint-config-react"
+	],
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"react-hooks",
+		"@typescript-eslint",
+		"simple-import-sort",
+		"unused-imports",
+		"jsx-a11y",
+		"import",
+		"prettier",
+		"jest",
+		"eslint-plugin-import"
+	],
+	"rules": {
+		"no-useless-catch": 0,
+		"@typescript-eslint/ban-ts-comment": "warn",
+		"import/first": "error",
+		"import/newline-after-import": ["error", { "count": 1 }],
+		"import/no-duplicates": "error",
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": [
+			2,
+			{
+				"groups": [
+					["react", "react-dom*", "next/*"],
+					[
+						"@remix-run.*",
+						"node.*",
+						"^[A-Za-z][A-Za-z0-9]\\w+$",
+						"@serverless.*",
+						"aws-lambda",
+						"@aws-sdk.*",
+						"@azure.*"
+					],
+					// anything that doesn't start with a dot
+					["^((?!(^\\.|@packages.*)).)*$"],
+					["^(@|@packages)(.*|$)"],
+					// Side effect imports.
+					["^\\u0000"],
+					// Parent imports. Put `..` last.
+					["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+					// Other relative imports. Put same-folder imports and `.` last.
+					["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+					// Relative imports.
+					// Anything that starts with a dot, styles, and assets
+					["styles", "assets", ".svg"]
+				]
+			}
+		],
+		"unused-imports/no-unused-imports-ts": "error",
+		"unused-imports/no-unused-vars-ts": [
+			"warn",
+			{
+				"vars": "all",
+				"varsIgnorePattern": "^_",
+				"args": "after-used",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/prefer-optional-chain": ["error"]
+	},
+	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
+}

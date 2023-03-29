@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "apps:deploy:production:all": "yarn packages:build && STAGE=production serverless deploy --stage=production",
+    "apps:deploy:staging:all": "yarn packages:build && STAGE=staging serverless deploy --stage=process.env.STAGE | ?",
+    "postapps:deploy:staging:all": "CURRENT_DIR=$PWD && cd ../scripts && bash post-deploy-serverless-aws.sh $CURRENT_DIR \"post:deploy:hooks:scripts\"",
+    "postinstall": "yarn util:bootstrap && find . -name 'package-lock.json' -exec rm -rf '{}' + && yarn packages:build && yarn util:sort:packagejson",
+    "packages:build": "yarn lerna run package:build --include-dependencies --stream",
+    "packages:update": "yarn packages:build && yarn",
+    "util:bootstrap": "lerna bootstrap --hoist --force-local && lerna link --force-local",
+    "util:clean": "find . -name 'node_modules' -exec rm -rf '{}' +; find . -name 'package-lock.json' -exec rm -rf '{}' +; find . -name 'yarn.lock' -exec rm -rf '{}' +; rm -rf node_modules; rm -rf lib; lerna run util:clean; lerna clean --yes",
+    "util:lint:fix:all": "lerna run util:lint:fix; npx --yes sort-package-json ./package.json apps/**/package.json packages/**/package.json",
+    "util:lint:prettier:all": "yarn util:lint:fix:all; npx prettier --write .",
+    "util:sort:packagejson": "npx sort-package-json package.json packages/**/package.json apps/**/package.json"
+  },
+  "devDependencies": {
+    "lerna": "^6.5.1",
+    "typescript": "^4.x"
+  }
+}
