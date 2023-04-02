@@ -20,7 +20,6 @@
     "util:sort:packagejson": "npx sort-package-json package.json packages/**/package.json apps/**/package.json"
   },
   "devDependencies": {
-    "lerna": "^6.5.1",
-    "typescript": "^4.x"
+    "lerna": "^6.6.1"
   }
 }

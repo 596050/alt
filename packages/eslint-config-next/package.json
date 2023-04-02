@@ -1,14 +1,11 @@
 {
   "name": "@ouorz/eslint-config-next",
   "version": "0.0.1",
-  "main": "index.js",
-  "description": "ESLint config for ouorz projects using Next.js",
   "private": true,
+  "description": "ESLint config for ouorz projects using Next.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.1.6",
@@ -23,5 +20,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "prettier-eslint": "^15.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

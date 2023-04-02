@@ -21,7 +21,6 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"strictNullChecks": false,
-		"suppressImplicitAnyIndexErrors": true,
 		"target": "es2015",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"noEmit": true,
@@ -31,11 +30,6 @@
 		"declarationMap": true,
 		"typeRoots": ["./src/types", "../../node_modules/@types"]
 	},
-	"include": [
-		"**/*.tsx",
-		"**/*.ts",
-		"./src/types/*.d.ts",
-		"src/pages/Clients/KnowYourClient"
-	],
+	"include": ["**/*.tsx", "**/*.ts", "./src/types/*.d.ts"],
 	"exclude": ["node_modules", "cypress", "dist"]
 }

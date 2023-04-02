@@ -1,9 +1,9 @@
 {
   "name": "@ouorz/prettier-config",
   "version": "0.0.1",
-  "main": "index.js",
-  "description": "Prettier config for ouorz projects",
   "private": true,
+  "description": "Prettier config for ouorz projects",
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
   }
