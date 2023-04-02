@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"jsx": "react",
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"noImplicitReturns": true,
+		"noImplicitThis": false,
+		"outDir": "./dist",
+		"paths": {
+			"@packages/ui-components/*": ["./src/*"]
+		},
+		"plugins": [{ "name": "typescript-plugin-css-modules" }],
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"strictNullChecks": false,
+		"suppressImplicitAnyIndexErrors": true,
+		"target": "es2015",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"noEmit": true,
+		"module": "esnext",
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"typeRoots": ["./src/types", "../../node_modules/@types"]
+	},
+	"include": [
+		"**/*.tsx",
+		"**/*.ts",
+		"./src/types/*.d.ts",
+		"src/pages/Clients/KnowYourClient"
+	],
+	"exclude": ["node_modules", "cypress", "dist"]
+}
