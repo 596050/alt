@@ -32,7 +32,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"dictionaries.ts"
+		"dictionaries.ts",
+		"../../packages/ui-components/src/create-emotion-cache.ts"
 	],
 	"exclude": ["node_modules"]
 }

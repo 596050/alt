@@ -1,13 +1,17 @@
+import { AppProps } from 'next/app'
+
 import React from 'react'
 
-import './globals.css'
 import ThemeProvider from '@/providers/provider-theme'
+import './globals.css'
 
-export default function RootLayout({
-	children,
-}: {
+export interface Props extends AppProps {
 	children: React.ReactNode
-}) {
+}
+
+export default function RootLayout(props: Props) {
+	const { children } = props
+
 	return (
 		<html lang="en">
 			{/*

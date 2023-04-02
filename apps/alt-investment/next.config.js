@@ -6,6 +6,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 const nextConfig = {
 	poweredByHeader: false,
+	reactStrictMode: true,
 	productionBrowserSourceMaps: false,
 	compress: true,
 	transpilePackages: ['@packages/ui-components', '@packages/utils'],

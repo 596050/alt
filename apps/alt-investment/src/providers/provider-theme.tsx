@@ -1,5 +1,6 @@
 'use client'
 
+import { ThemeCustomization } from '@packages/ui-components'
 import { createContext } from 'react'
 
 import type { ReactNode } from 'react'
@@ -20,8 +21,10 @@ export default function ThemeProvider({
 	descriptor = ThemeDescriptor.light,
 }: { children: ReactNode } & ThemeContextProps) {
 	return (
-		<ThemeContext.Provider value={{ descriptor }}>
-			{children}
-		</ThemeContext.Provider>
+		<ThemeCustomization>
+			<ThemeContext.Provider value={{ descriptor }}>
+				{children}
+			</ThemeContext.Provider>
+		</ThemeCustomization>
 	)
 }

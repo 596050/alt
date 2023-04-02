@@ -1,7 +1,7 @@
 'use client'
 import { getLocalePartsFrom, getTranslator, locales, ValidLocale } from '@/i18n'
 
-import { useDelayedRender } from '@packages/ui-components'
+import { ScrollTop, useDelayedRender } from '@packages/ui-components'
 
 export async function generateStaticParams() {
 	return locales.map((locale) => getLocalePartsFrom({ locale }))
@@ -24,6 +24,7 @@ export default function Home({
 						year: new Date().getFullYear(),
 					})}
 				</h2>
+				<ScrollTop />
 			</div>
 		)
 	})

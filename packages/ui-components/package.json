@@ -11,15 +11,21 @@
 		"gen:svgs": "npx @svgr/cli -d src/assets/components src/assets/svg/ --typescript"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.*",
-		"@emotion/styled": "^11.*",
-		"@mui/icons-material": "^5.*",
-		"@mui/material": "^5.*",
+		"@ant-design/colors": "^7.*",
+		"@emotion/cache": "latest",
+		"@emotion/react": "latest",
+		"@emotion/server": "latest",
+		"@emotion/styled": "latest",
+		"@mui/icons-material": "latest",
+		"@mui/material": "latest",
+		"lodash": "^4.*",
 		"react": "^18.*"
 	},
 	"devDependencies": {
-		"@types/react": "^18.*",
+		"@types/lodash": "^4.*",
+		"@types/node": "latest",
+		"@types/react": "latest",
 		"tsup": "^6.7.0",
-		"typescript": "^5.*"
+		"typescript": "latest"
 	}
 }
