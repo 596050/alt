@@ -1,3 +1,1 @@
-export { };
-
-export const a = "hello"
+export { useDelayedRender } from './hooks';

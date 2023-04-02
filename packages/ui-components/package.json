@@ -5,8 +5,8 @@
 	"description": "Prettier config for ouorz projects",
 	"main": "src/index.ts",
 	"scripts": {
-		"build:dev": "npx --yes tsup src/index.ts --format cjs,esm --treeshake --external react --sourcemap inline --watch",
 		"build": "tsup --config ./tsup.config.ts",
+		"build:dev": "npx --yes tsup src/index.ts --format cjs,esm --treeshake --external react --sourcemap inline --watch",
 		"clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
 		"gen:svgs": "npx @svgr/cli -d src/assets/components src/assets/svg/ --typescript"
 	},

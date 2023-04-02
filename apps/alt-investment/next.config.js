@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path');
+const path = require('path')
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
 const nextConfig = {
 	poweredByHeader: false,
 	productionBrowserSourceMaps: false,
 	compress: true,
-	transpilePackages: ['@packages/components', '@packages/utils'],
+	transpilePackages: ['@packages/ui-components', '@packages/utils'],
 
 	// modularizeImports: {
 	//   '@acme/ui': {
@@ -33,7 +33,7 @@ const nextConfig = {
 	experimental: {
 		appDir: true,
 	},
-	webpack: (config, {buildId, dev, isServer, defaultLoaders, webpack}) => {
+	webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
 		config.module.rules.push({
 			test: /FrutigerLTW01\/.+\.(woff|woff2)$/,
 			type: 'asset',
@@ -45,7 +45,7 @@ const nextConfig = {
 					limit: 1,
 				},
 			},
-		});
+		})
 
 		config.module.rules.push({
 			test: /\.(jpe?g|png|svg|gif|ico|eot|ttf|mp4|pdf|webm)$/,
@@ -53,7 +53,7 @@ const nextConfig = {
 			generator: {
 				filename: 'static/media/[path][name].[hash][ext]',
 			},
-		});
+		})
 
 		// if (!isServer) {
 		// 	config.node = {
@@ -88,19 +88,19 @@ const nextConfig = {
 			// net: false,
 			// tls: false,
 			// child_process: false,
-		};
+		}
 
-		return config;
+		return config
 	},
-};
+}
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
-});
+})
 
 const withPWA = require('@ducanh2912/next-pwa').default({
 	dest: 'public',
-});
+})
 
 // const withPWA = require('next-pwa')({
 // 	dest: 'public',
@@ -124,4 +124,4 @@ const withPWA = require('@ducanh2912/next-pwa').default({
 // 	],
 // })
 
-module.exports = withBundleAnalyzer(withPWA(nextConfig));
+module.exports = withBundleAnalyzer(withPWA(nextConfig))

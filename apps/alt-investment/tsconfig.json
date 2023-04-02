@@ -23,17 +23,7 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"~/*": ["./*"],
-			"@packages/components": ["../../packages/components/src/index"],
-			"@twilight-packages/utils": ["../../packages/twilight-utils/src/index"],
-			"@packages/utils": ["../../packages/utils/src/index"],
-			"@packages/util-shared-types": [
-				"../../packages/util-shared-types/src/index"
-			],
-			"~/components": ["../../packages/components/src"],
-			"~/components/*": ["../../packages/components/src/*"],
-			"~/util": ["../../packages/utils/src"],
-			"~/util/*": ["../../packages/utils/src/*"],
-			"@ducanh2912/next-pwa": ["../../packages/next-pwa/src/index"]
+			"@packages/ui-components": ["../../packages/ui-components/src/index"]
 		},
 		"typeRoots": ["node_modules/@types", "./src/typings"]
 	},
